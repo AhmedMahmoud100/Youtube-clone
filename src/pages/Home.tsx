@@ -30,7 +30,7 @@ export default function Home() {
       </div>
       <div className="flex" style={{ height: "92.5vh" }}>
         <Sidebar />
-        <div className="main">
+        <div className="flex-1">
           {videos.length ? (
             <InfiniteScroll
               dataLength={videos.length}
@@ -39,7 +39,7 @@ export default function Home() {
               loader={<Spinner />}
               height={650}
             >
-              <div className="grid  gap-y-12 gap-x-4  p-8 custom-grid">
+              <div className="grid  gap-y-12 gap-x-4  p-8 grid-cols-autoFit w-full justif-center">
                 {videos.map((item: HomePageVideos) => {
                   return <Card data={item} key={item.videoId} />;
                 })}

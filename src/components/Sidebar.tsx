@@ -21,7 +21,7 @@ import { useAppDispatch, useAppSelector } from "../store/hooks";
 
 export default function Sidebar() {
   const menu = useAppSelector(state => state.menu.visibilty)
-  console.log(menu)
+
   const mainLinks = [
     {
       icon: <MdHomeFilled className="text-xl" />,
@@ -122,7 +122,7 @@ export default function Sidebar() {
   ];
 
   return (
-    <div className= {menu ?"w-64  bg-[#212121] pr-5 overflow-auto pb-8 sidebar active shrink-0 z-10" :"w-64 bg-[#212121] pr-5 overflow-auto pb-8 sidebar shrink-0 z-10"  }>
+    <div className= {menu ?" absolute w-64  transition duration-300 bg-[#212121] pr-5 overflow-auto pb-8 translate-x-0	 shrink-0 z-10" :"w-64 absolute lg:static transition duration-300 bg-[#212121] pr-5 overflow-auto pb-8 translate-x-[-100%] lg:translate-x-[0] shrink-0 z-10"  }>
       <ul className="flex flex-col border-b-2 border-gray-700">
         {mainLinks.map(({ icon, name }) => {
           return (

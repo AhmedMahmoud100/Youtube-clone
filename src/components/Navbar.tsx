@@ -18,7 +18,9 @@ export default function Navbar() {
   const searchTerm = useAppSelector((state) => state.youtubeApp.searchTerm);
   
  function handleMenu(){
-   dispatch(showMenu())
+  if(window.screen.width < 1024){
+    dispatch(showMenu())
+  }
   
   }
 

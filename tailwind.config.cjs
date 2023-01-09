@@ -5,7 +5,11 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      gridTemplateColumns : {
+        'autoFit' : 'repeat(auto-fit, minmax(230px, 1fr))'
+      }
+    },
   },
   plugins: [require("@tailwindcss/line-clamp")],
 }
